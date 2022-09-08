@@ -6,7 +6,8 @@ public class Movie {
     private final String genre;
     private final String releaseDate;
 
-    // create getter and setter for all the above attributes
+    // create getter and setter for all the above
+
 
 
     //complete the parameterized constructor
