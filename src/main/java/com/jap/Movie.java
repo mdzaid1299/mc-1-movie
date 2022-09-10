@@ -9,7 +9,6 @@ public class Movie {
     // create getter and setter for all the above
 
 
-
     //complete the parameterized constructor
     public Movie(int movieId, String movieName, String genre, String releaseDate) {
         this.movieId = movieId;
@@ -33,4 +32,15 @@ public class Movie {
     public String getReleaseDate() {
         return releaseDate;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieId=" + movieId +
+                ", movieName='" + movieName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", releaseDate='" + releaseDate + '\'' +
+                '}';
+    }
+
 }

@@ -19,20 +19,37 @@ public class MovieService {
     public Map<Movie, Integer> getMovieWithRating() {
 
         //create five movie object by calling Movie class parameterized constructor
+        Movie m1 = new Movie(111, "the Shawshank Redemption", "suspence ", "1994");
+        Movie m2 = new Movie(222, " The Godfather", "Gangstar", "1974");
+        Movie m3 = new Movie(333, "12 Angry Man", "Comedy", "1957");
+        Movie m4 = new Movie(444, "LOTR", "Fantasy", "2003");
+        Movie m5 = new Movie(555, "Parasite", "Suspence", "2019");
 
         //create HashMap object and add all the Movie object inside it
+        Map<Movie, Integer> movieMap = new HashMap<>();
+        movieMap.put(m1, 5);
+        movieMap.put(m2, 5);
+        movieMap.put(m3, 2);
+        movieMap.put(m4, 4);
+        movieMap.put(m5, 4);
+
 
         //Key will be movie object and value will be rating ranging from 1 to 5
 
         //return the HashMap object
-        Map map = new HashMap();
 
-        return map;
+
+        return movieMap;
     }
 
     public Set<String> getMovieNameWithRating4(Map<Movie, Integer> map, int rating) {
         //Create a TreeSet object
-
+        Set<String> stringSet = new TreeSet<>();
+        for (Map.Entry<Movie, Integer> pam : map.entrySet()) {
+            if (pam.getValue() == rating) {
+                stringSet.add(pam.getKey().getMovieName());
+            }
+        }
         //Use entrySet() method to iterate through the map object
 
         //retrieve all the movies name having rating as 4
@@ -41,13 +58,17 @@ public class MovieService {
 
         //return the TreeSet object
 
-        return null;
+        return stringSet;
     }
 
     public List<String> getMovieWithHighestRating(Map<Movie, Integer> map) {
         //Create a ArrayList object of type String
         List<String> list = new ArrayList<>();
-
+        for (Map.Entry<Movie, Integer> pam : map.entrySet()) {
+            if (pam.getValue() == 5) {
+                list.add(pam.getKey().getMovieName());
+            }
+        }
 
         //get the first value from the map and store it in the variable max
 
@@ -58,21 +79,25 @@ public class MovieService {
 
         //return the List object
 
-        List l = new ArrayList();
-        return l;
+
+        return list;
     }
 
     public Map<String, String> getAllMoviesWithComedy(Map<Movie, Integer> map) {
         //Create a Map object
+        Map<String, String> stringMap = new HashMap<>();
+        for (Map.Entry<Movie, Integer> mp : map.entrySet()) {
+            if (mp.getKey().getGenre().equals("comedy")) {
+                stringMap.put(mp.getKey().getMovieName(), mp.getKey().getReleaseDate());
+            }
+            //use entrySet to iterate through the Map object
 
-        //use entrySet to iterate through the Map object
+            //get all the movies name and their released date for the movie of genre "comedy"
 
-        //get all the movies name and their released date for the movie of genre "comedy"
+            //store movie name with release date in the above created Map object and return the Map object
 
-        //store movie name with release date in the above created Map object and return the Map object
 
-        Map map1 = new HashMap();
-        return map1;
-
+        }
+        return stringMap;
     }
-}
+    }
