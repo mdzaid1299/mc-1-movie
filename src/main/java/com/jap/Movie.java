@@ -15,6 +15,7 @@ public class Movie {
         this.movieName = movieName;
         this.genre = genre;
         this.releaseDate = releaseDate;
+
     }
 
     public int getMovieId() {
